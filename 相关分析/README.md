@@ -1,4 +1,3 @@
-
 # Restaurant Data Analysis Project
 
 This repository showcases a comprehensive analysis of customer behavior and tipping patterns in a restaurant, utilizing a mathematical modeling approach to solve real-world problems. It includes source code, visualizations, and an accompanying research paper documenting the methodology and findings.
@@ -9,7 +8,9 @@ This repository showcases a comprehensive analysis of customer behavior and tipp
 
 - [Project Overview](#project-overview)
 - [Data Analysis Objectives](#data-analysis-objectives)
+- [Datasets](#datasets)
 - [Research Paper](#research-paper)
+- [Data Processing](#data-processing)
 - [Methodology](#methodology)
 - [Key Findings](#key-findings)
 - [Technologies Used](#technologies-used)
@@ -53,6 +54,18 @@ This project applies mathematical modeling and data analysis techniques to under
 
 ---
 
+## Datasets
+
+This repository includes the following datasets for analysis:
+
+1. **`tips.csv`**: The initial dataset with column names in English.
+2. **`tipsz.csv`**: A modified version of the dataset with column names translated into Chinese for ease of use.
+3. **`tipszz.csv`**: A processed dataset combining existing columns and adding a new column representing "Gender + Smoking Combination".
+
+Each dataset is used in different stages of the analysis to perform hypothesis testing, visualization, and model building.
+
+---
+
 ## Research Paper
 
 The repository includes a well-documented research paper that delves into:
@@ -61,18 +74,37 @@ The repository includes a well-documented research paper that delves into:
 - Comprehensive visualization and interpretation of results.
 - Practical recommendations based on findings.
 
-The paper serves as both a reference for mathematical modeling and a practical guide for applying data-driven insights in the restaurant industry.
+[Download the Research Paper](sandbox:/mnt/data/基于假设检验的餐馆数据相关分析.docx)
+
+---
+
+## Data Processing
+
+1. **Initial Inspection**
+   - Conducted exploratory data analysis to understand key attributes and their distributions.
+   - Identified and handled missing data and outliers.
+
+2. **Column Renaming**
+   - Translated column names from English to Chinese for better interpretability.
+
+3. **Data Transformation**
+   - Created new variables, such as "Gender + Smoking Combination," for multi-factor analysis.
+   - Normalized and scaled data where necessary for statistical testing.
 
 ---
 
 ## Methodology
 
-- **Data Preprocessing**
-  - Computation of descriptive statistics.
-  - Handling outliers and ensuring data integrity.
+- **Spearman's Rank Correlation**
+  - Used to measure the strength and direction of the monotonic relationship between two variables.
+  - Unlike Pearson's correlation, Spearman's correlation does not assume normality, making it ideal for non-parametric datasets.
+  - Computed using:
+    \[
+    r_s = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}
+    \]
+    where \( d_i \) is the difference between ranks of corresponding values in two datasets, and \( n \) is the sample size.
 
-- **Mathematical and Statistical Models**
-  - Spearman's rank correlation for non-parametric data.
+- **Statistical Tests**
   - Jarque-Bera test for normality verification.
   - Independent t-tests for mean comparison.
 
