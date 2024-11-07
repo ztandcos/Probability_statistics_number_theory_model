@@ -10,6 +10,7 @@ This repository showcases a comprehensive analysis of customer behavior and tipp
 - [Data Analysis Objectives](#data-analysis-objectives)
 - [Datasets](#datasets)
 - [Research Paper](#research-paper)
+- [Data Processing](#data-processing)
 - [Methodology](#methodology)
 - [Key Findings](#key-findings)
 - [Technologies Used](#technologies-used)
@@ -23,7 +24,6 @@ This repository showcases a comprehensive analysis of customer behavior and tipp
 This project applies mathematical modeling and data analysis techniques to understand customer behavior and optimize restaurant operations. Using data collected over 244 days, the analysis focuses on uncovering patterns and relationships that can guide strategic decision-making.
 
 ### Highlights
-
 - Includes a detailed research paper explaining the mathematical models used.
 - Combines statistical analysis, hypothesis testing, and visualization.
 - Provides actionable insights to improve customer satisfaction and restaurant performance.
@@ -69,7 +69,6 @@ Each dataset is used in different stages of the analysis to perform hypothesis t
 ## Research Paper
 
 The repository includes a well-documented research paper that delves into:
-
 - The mathematical and statistical methods employed.
 - Hypothesis formulation and testing.
 - Comprehensive visualization and interpretation of results.
@@ -77,18 +76,35 @@ The repository includes a well-documented research paper that delves into:
 
 [Download the Research Paper](sandbox:/mnt/data/基于假设检验的餐馆数据相关分析.docx)
 
-The paper serves as both a reference for mathematical modeling and a practical guide for applying data-driven insights in the restaurant industry.
+---
+
+## Data Processing
+
+1. **Initial Inspection**
+   - Conducted exploratory data analysis to understand key attributes and their distributions.
+   - Identified and handled missing data and outliers.
+
+2. **Column Renaming**
+   - Translated column names from English to Chinese for better interpretability.
+
+3. **Data Transformation**
+   - Created new variables, such as "Gender + Smoking Combination," for multi-factor analysis.
+   - Normalized and scaled data where necessary for statistical testing.
 
 ---
 
 ## Methodology
 
-- **Data Preprocessing**
-  - Computation of descriptive statistics.
-  - Handling outliers and ensuring data integrity.
+- **Spearman's Rank Correlation**
+  - Used to measure the strength and direction of the monotonic relationship between two variables.
+  - Unlike Pearson's correlation, Spearman's correlation does not assume normality, making it ideal for non-parametric datasets.
+  - Computed using:
+    \[
+    r_s = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}
+    \]
+    where \( d_i \) is the difference between ranks of corresponding values in two datasets, and \( n \) is the sample size.
 
-- **Mathematical and Statistical Models**
-  - Spearman's rank correlation for non-parametric data.
+- **Statistical Tests**
   - Jarque-Bera test for normality verification.
   - Independent t-tests for mean comparison.
 
